@@ -4,10 +4,10 @@ library(twitteR)
 library(rtweet)
 library(wordcloud)
 
-api_key <- 'YWNgbVoBHTeXg1SFpGr1ALgVJ'
-api_secret <- 'huUHkgPynFph3Z9ZG7YUXpErljkCCqNhkQS8BBFfmYVcpmykuE'
-Access_token <- '2490891704-uX4Soob6epdSw3xm2wxgkVnxDbM9ZkzOPsh5pxj'
-Access_secret <- 'KXCrRQNWiEN3aFvkjAUMQQT6kMSAiKgpmMLzOZ2NavXha'
+api_key <- "your api key"
+api_secret <- "your api secret"
+Access_token <- "your access token"
+Access_secret <- "your access secret"
 
 
 #Login/access ke Twitter
@@ -16,7 +16,7 @@ setup_twitter_oauth(api_key, api_secret, Access_token, Access_secret)
 
 #Generate Tweet
 
-tweet <- searchTwitter('biden', n=1000, lang='id' )
+tweet <- searchTwitter('Apple', n=1000, lang='id' )
 tweet
 tweetdf <- twListToDF(tweet)
 write.csv(tweetdf, file = 'C:/Users/ASUS/Documents/tweet.csv', row.names=F)
@@ -40,5 +40,5 @@ corpus <- tm_map(corpus, removePunctuation)
 corpus <- tm_map(corpus, removeNumbers)
 inspect(corpus[1:5])
 
-stopwordID <- "C:/Users/ASUS/Documents/ID-Stopwords-master/id.stopwords.02.01.2016.txt"
+stopwordID <- "insert stopword file from your computer"
 cStopwordID <- readLines(stopwordID)
