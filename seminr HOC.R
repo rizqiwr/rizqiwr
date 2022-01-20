@@ -1,4 +1,4 @@
-setwd("D:/OneDrive - UGM 365/Thesis/Data")
+Install.packages("seminr")
 library("seminr")
 tesis1 <- read.csv(file = "data.CSV", header = TRUE)
 head(tesis1)
