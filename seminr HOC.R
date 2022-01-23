@@ -36,29 +36,17 @@ summary(tesis1_model)
 summary_tesis1_model <- summary(tesis1_model)
 summary_tesis1_model$paths #direct effect
 summary_tesis1_model$reliability
-summary_tesis1_model$meta
-summary_tesis1_model$iterations
 summary_tesis1_model$total_effects
 summary_tesis1_model$total_indirect_effects #mediasi (inspect the total indirect effect)
 summary_tesis1_model$loadings
-summary_tesis1_model$weights
 summary_tesis1_model$validity
 summary_tesis1_model$vif_antecedents
 summary_tesis1_model$fSquare
-summary_tesis1_model$descriptives
 summary_tesis1_model$validity$htmt
 plot(summary_tesis1_model$reliability)
 
 write.csv(x = summary_tesis1_model$vif_antecedents,
           file = "vif.csv")
-
-#HTMT criterion
-summary_tesis1_model$validity$htmt
-sum_htmt <- summary(boot_tesis1_model, alpha = 0.10)
-sum_htmt$bootstrapped_HTMT
-
-write.csv(x = sum_htmt$bootstrapped_HTMT,
-         file = "bootsrappedHTMT.csv")
 
 #STRUCTURAL MODEL ASSESMENT
 # Bootstrap the model
